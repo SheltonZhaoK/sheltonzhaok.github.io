@@ -463,15 +463,12 @@ td {
 
 tr:hover td { background: rgba(14,165,233,0.03); }
 
-tr.cluster-center td { background: rgba(14,165,233,0.08); }
-tr.cluster-center td:first-child { position: relative; }
+tr.cluster-center td {
+    background: transparent;
+}
 
 tr.cluster-center td:first-child::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 3px;
-    background: var(--accent-primary);
+    display: none;
 }
 
 .rule-text {

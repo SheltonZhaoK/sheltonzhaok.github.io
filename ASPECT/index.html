@@ -26,6 +26,7 @@
                 <div class="logo-text"><span>ASPECT</span> Data</div>
             </div>
             <nav class="header-nav">
+                <a href="#" class="nav-link" id="labRulesBtn">Laboratory Rules</a>
                 <a href="#" class="nav-link" id="helpBtn">User Instructions</a>
             </nav>
         </div>
@@ -175,6 +176,42 @@
                 <button class="modal-close" id="modalClose">&times;</button>
             </div>
             <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Laboratory Rules Modal -->
+    <div class="modal-overlay" id="labModalOverlay">
+        <div class="modal" style="max-width: 1100px;">
+            <div class="modal-header">
+                <h2 class="modal-title">Laboratory-Based Eligibility Rules Analysis</h2>
+                <button class="modal-close" id="labModalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: 1.5rem;">
+                    <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+                        This figure shows the relationship between laboratory test thresholds and patient exclusion rates across five cancer types. Each panel (A-H) represents a different laboratory parameter commonly used in clinical trial eligibility criteria.
+                    </p>
+                    <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+                        <strong style="color: var(--text-primary);">Key Findings:</strong>
+                    </p>
+                    <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.5rem; margin-bottom: 1rem;">
+                        <li><strong>Absolute Neutrophil Count (A)</strong></li>
+                        <li><strong>Platelets (B)</strong></li>
+                        <li><strong>Hemoglobin (C)</strong></li>
+                        <li><strong>Creatinine Clearance (D)</strong></li>
+                        <li><strong>White Blood Cells (E)</strong></li>
+                        <li><strong>Serum Creatinine (F)</strong></li>
+                        <li><strong>Total Bilirubin (G)</strong></li>
+                        <li><strong>Albumin (H)</strong></li>
+                    </ul>
+                    <p style="color: var(--text-secondary); line-height: 1.7;">
+                        The curves demonstrate how adjusting these thresholds can change the eligible patient population. Values in parentheses indicate the frequency of each threshold in historical trials.
+                    </p>
+                </div>
+                <div style="text-align: center; background: var(--bg-tertiary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                    <img src="lab.png" alt="Laboratory Rules Analysis" style="max-width: 100%; height: auto; border-radius: var(--radius-sm);">
+                </div>
+            </div>
         </div>
     </div>
 

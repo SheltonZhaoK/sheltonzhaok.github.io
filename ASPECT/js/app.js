@@ -70,6 +70,8 @@ const el = {
     modalTitle: document.getElementById('modalTitle'),
     modalBody: document.getElementById('modalBody'),
     modalClose: document.getElementById('modalClose'),
+    labModalOverlay: document.getElementById('labModalOverlay'),
+    labModalClose: document.getElementById('labModalClose'),
     exportBtn: document.getElementById('exportBtn'),
     columnsBtn: document.getElementById('columnsBtn'),
     columnPanel: document.getElementById('columnPanel'),
@@ -144,10 +146,24 @@ function setupEventListeners() {
     el.columnPanel.addEventListener('click', (e) => e.stopPropagation());
     
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
+        if (e.key === 'Escape') {
+            closeModal();
+            closeLabModal();
+        }
     });
     
     document.getElementById('helpBtn').addEventListener('click', showHelp);
+    
+    // Laboratory Rules modal
+    document.getElementById('labRulesBtn').addEventListener('click', (e) => {
+        e.preventDefault();
+        el.labModalOverlay.classList.add('active');
+    });
+    
+    el.labModalClose.addEventListener('click', closeLabModal);
+    el.labModalOverlay.addEventListener('click', (e) => {
+        if (e.target === el.labModalOverlay) closeLabModal();
+    });
 }
 
 // Populate Filter Dropdowns
@@ -468,6 +484,11 @@ function openModal(row) {
 // Close Modal
 function closeModal() {
     el.modalOverlay.classList.remove('active');
+}
+
+// Close Lab Modal
+function closeLabModal() {
+    el.labModalOverlay.classList.remove('active');
 }
 
 // Export Filtered Data as CSV
